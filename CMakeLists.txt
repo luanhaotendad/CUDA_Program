@@ -8,12 +8,9 @@ project(MyApp
 )
 
 # ===== 语言标准 =====
-# SFML 3 需要 C++17
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
-
-# CUDA 同样使用 C++17
 set(CMAKE_CUDA_STANDARD 17)
 set(CMAKE_CUDA_STANDARD_REQUIRED ON)
 set(CMAKE_CUDA_EXTENSIONS OFF)
@@ -28,7 +25,6 @@ endif()
 # 典型项目至少用到 Graphics / Window / System
 set(SFML_COMPONENTS Graphics Window System)
 set(SFML_STATIC_LIBRARIES TRUE)
-# 要求 SFML 主版本为 3（避免误连到 2.x）
 find_package(SFML 3 REQUIRED COMPONENTS ${SFML_COMPONENTS})
 # 说明：SFML 3 的组件名首字母需大写，链接目标名为 SFML::<Module>（例如 SFML::Graphics）。这在官方迁移文档与配置脚本中均有说明。
 
@@ -81,3 +77,4 @@ endif()
 
 # 在 IDE 中按目录树分组显示源码
 source_group(TREE "${CMAKE_SOURCE_DIR}/src" FILES ${CPP_SOURCES} ${CU_SOURCES})
+
