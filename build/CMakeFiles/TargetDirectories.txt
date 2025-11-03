@@ -1,0 +1,3 @@
+/home/yangwang/VScode/liziyundong/build/CMakeFiles/MyApp.dir
+/home/yangwang/VScode/liziyundong/build/CMakeFiles/edit_cache.dir
+/home/yangwang/VScode/liziyundong/build/CMakeFiles/rebuild_cache.dir
