@@ -1,7 +1,7 @@
 // 仅包含 CPU/GPU 通用的数据结构（无 SFML、无 CUDA 关键字）
 #ifndef PARTICLE_COMMON_H
 #define PARTICLE_COMMON_H
-#ifndef NN_CAP
+#ifndef NN_CAP//邻居数量=count-1
 #define NN_CAP 999
 #endif
 #include<iostream>

@@ -4,7 +4,7 @@
 int main() {
     // 创建SFML窗口
     sf::RenderWindow window(
-    sf::VideoMode(sf::Vector2u(800, 600)),  // 显式传递 Vector2u
+    sf::VideoMode(sf::Vector2u(1600, 1000)),  // 显式传递 Vector2u
     "GPU粒子系统（使用Particle类）",
     sf::Style::Close
 );

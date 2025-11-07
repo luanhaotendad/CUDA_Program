@@ -17,11 +17,12 @@ private:
     int particleCount;
 
 public:
-    ParticleSystem(unsigned int winW, unsigned int winH):m_shape(0),particleCount(1000) {
+    ParticleSystem(unsigned int winW, unsigned int winH):particleCount(1000)//m_shape(0)
+     {
         // 初始化随机数生成器
         std::mt19937 gen(std::random_device{}());
-        std::uniform_real_distribution<float> posDist(10.0f, winW - 10.0f);  // 位置范围（避免初始就在边界）
-        std::uniform_real_distribution<float> speedDist(-50.0f, 50.0f);     // 速度范围
+        std::uniform_real_distribution<float> posDist(20.0f, winW - 10.0f);  // 位置范围（避免初始就在边界）
+        std::uniform_real_distribution<float> speedDist(-100.0f,100.0f);     // 速度范围
         std::uniform_real_distribution<float> radiusDist(2.0f, 6.0f);       // 半径范围
         
         h_particles.reserve(particleCount);
@@ -31,11 +32,11 @@ public:
         for (int i = 0; i < particleCount; ++i) {
             // 调用Particle类的构造函数初始化位置、速度、半径
             h_particles.emplace_back(
-                posDist(gen),    // x坐标
+                posDist(gen),  // x坐标
                 posDist(gen),    // y坐标
-                speedDist(gen),  // x方向速度
+                10.0f,  // x方向速度
                 speedDist(gen),  // y方向速度
-                2.0f  // 半径
+                10.0f  // 半径
             );
 
             // 随机生成颜色（仅CPU渲染用）
